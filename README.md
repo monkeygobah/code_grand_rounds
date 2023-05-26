@@ -1,3 +1,4 @@
+# Code MD
 # Computer Science By Medical Students for Medical Students
 
 > Medicine in the 21st century is becoming an increasingly computational field, and we have created this course to provide an introductory series for medical students (or really anyone!) looking to get familiar with the basics of computation and how it may be applied medically. The goal of these tutorials are **not** to make expert programmers, but rather introduce people to various areas of CS at a high level, and hopefully equip them with the basic skills to get started and implement some techniques in their own life/ research. 
