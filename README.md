@@ -30,9 +30,6 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
 
 **If you would like to contribute to the project, please get in touch.**
 
-![download](https://github.com/monkeygobah/code_md/assets/117255104/b87a6ed1-4d04-4178-9f50-5c73d643df7d)
-
-
 
 ## Module 1 
 ## Programming Basics
