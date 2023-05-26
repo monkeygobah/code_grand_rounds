@@ -1,10 +1,23 @@
 # Code MD
 ## Computer Science By Medical Students for Medical Students
 
-> Medicine in the 21st century is becoming an increasingly computational field, and we have created this course to provide an introductory series for medical students (or really anyone!) looking to get familiar with the basics of computation and how it may be applied medically. The goal of these tutorials are **not** to make expert programmers, but rather introduce people to various areas of CS at a high level, and hopefully equip them with the basic skills to get started and implement some techniques in their own life/ research. 
+## Table of Contents
+**[Preface](#preface)**<br>
+**[Programming Basics](#programming-basics)**<br>
+**[Computer Vision](#computer-vision)**<br>
+**[Data Science](#data-science)**<br>
+**[Machine Learning (~2hrs)](#machine-learning-(~2hrs))**<br>
+**[Natural Language Processing](#natural-language-processing)**<br>
+
+## Module 0
+## Preface
+
+This curriculum is designed to ***augment*** another medical (or other graduate training) by introducing high level topics in computer science. By the end, we want you to be able to:
+ * Talk about basic computer science toolkits with another computer scientist
+ * Read a paper involving computatonal techniques and know roughly what is going on
+ * Give you a framework with which to approach your own research/ clinical problems using computer science
 
 ### How do I use this resource?
-
 
 ***If you are brand new to computer science, we reccomend you start at module 1 to get a brief overview of the topics!!***
 
@@ -12,16 +25,10 @@
 >
 > ANKI CARDS AND Q-BANKS COMING SOON!:D
 
-## Table of Contents
-**[Module 1: Programming Basics](#module-1:-programming-basics)**<br>
-**[Module 2: Computer Vision](#module-2:-computer-vision)**<br>
-**[Module 3: Data Science](#module-3:-data-science)**<br>
-**[Module 4: Machine Learning (~2hrs)](#module-4:-machine-learning-(~2hrs))**<br>
-**[Module 5: Natural Language Processing](#module-5:-natural-language-processing)**<br>
+**If you would like to contribute to the project, please get in touch.**
 
-
-
-## Module 1: Programming Basics
+## Module 1 
+## Programming Basics
 
 > Goal: Introduce Someone who has never touched written code to the bare basics
 
@@ -62,7 +69,8 @@
 ### Module 1 Projects:
   * Basic Python principle notebook review and post module worksheet
 
-## Module 2: Computer Vision
+## Module 2 
+## Computer Vision
 >  Goal: Explanation of basic computer vision principles and relevant principles. Introduction and explanation of artificial intelligence
 
 **2a) Review of Python Basics**
@@ -101,10 +109,18 @@
 
 
 
-## Module 3: Data Science
+## Module 3
+## Data Science
 *Coming soon...
+ * basically a whole session pandas and numpy
+ * intro level stats
+ * linear regression
+ * logistic regression
+ * different tests
+ * manipulation of dfs
 
-## Module 4: Machine Learning (~2hrs)
+## Module 4
+## Machine Learning 
 > Goals: Introduce learners to ML in broad strokes to allow people to be conversational and understand use cases of some core algorithms through very simple projects
 **4a)  Machine learning vs artificial intelligence**
   * How do we talk about these things
@@ -130,7 +146,11 @@
   * UCI heart disease dataset-KNN
   * Microarray malignancy dataset Warnat-Herresthal et al: Unsupervised Clustering
 
-## Module 5: Natural Language Processing (~1hr)
+## Module 5
+## Natural Language Processing 
 *Coming soon....
+* not sure we need this?
+* Was thinking maybe creation of vector db from some textbook and using gpt api to query
+* might be overkill, but also v relevant
 
 
