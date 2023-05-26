@@ -118,8 +118,7 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
 I (GRN) think this should be the bare basics of data science, as to get a full picture on data science you need two lectures to introduce the groundwork and then get into some real applied techniques. I am willing to bet this is something people want the most within the medical sphere, so having two well fleshed out sections makes sense in my brain.
  * Pandas
  * Scikitlearn
- * numpy
- * matplotlib
+ * matplotlib/ seaborn
  * intro level stats
  * linear regression
  * logistic regression
