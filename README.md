@@ -1,14 +1,15 @@
 # Computer Science By Medical Students for Medical Students
 
-Medicine in the 21st century is becoming an increasingly computational field, and we have created this course to provide an introductory series for medical students (or really anyone!) looking to get familiar with the basics of computation and how it may be applied medically. The goal of these tutorials are **not** to make expert programmers, but rather introduce people to various areas of CS at a high level, and hopefully equip them with the basic skills to get started and implement some techniques in their own life/ research. 
+> Medicine in the 21st century is becoming an increasingly computational field, and we have created this course to provide an introductory series for medical students (or really anyone!) looking to get familiar with the basics of computation and how it may be applied medically. The goal of these tutorials are **not** to make expert programmers, but rather introduce people to various areas of CS at a high level, and hopefully equip them with the basic skills to get started and implement some techniques in their own life/ research. 
 
 ### How do I use this resource?
 
-The curriculum is broken up into various modules covering different areas of CS. 
 
-***If you are brand new to the field, we reccomend you start at module 1 to get a brief overview of the topics!!***
+***If you are brand new to computer science, we reccomend you start at module 1 to get a brief overview of the topics!!***
 
-Each module has slides which can be found in the main branch of this repository and can be used for reference as well as attached jupyter notebooks which can be played with on your own time to really start to get a grasp on the topics. we have left some references in each module, but if something is particularly confusing you can use ChatGPT or the internet to pursue it further.
+> Each module has slides which can be found in the main branch of this repository and can be used for reference as well as attached jupyter notebooks which can be played with on your own time to really start to get a grasp on the topics. we have left some references in each module, but if something is particularly confusing you can use ChatGPT or the internet to pursue it further.
+> 
+> ANKI CARDS AND Q-BANKS COMING SOON!:D
 
 
 ## Module 1: Programming Basics (~1.5 hrs)
