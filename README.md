@@ -113,8 +113,9 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
 
 ## Module 3
 ## Data Science
-*Coming soon...
-**I (GRN) think this should be the bare basics of data science, as to get a full picture on data science you need two lectures to introduce the groundwork and then get into some real applied techniques. I am willing to bet this is something people want the most within the medical sphere, so having two well fleshed out sections makes sense in my brain.
+* Coming soon...
+
+I (GRN) think this should be the bare basics of data science, as to get a full picture on data science you need two lectures to introduce the groundwork and then get into some real applied techniques. I am willing to bet this is something people want the most within the medical sphere, so having two well fleshed out sections makes sense in my brain.
  * Pandas
  * Scikitlearn
  * numpy
@@ -124,6 +125,8 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
  * logistic regression
  * different tests
  * manipulation of dfs
+ ### Module 3 projects
+ (https://www.kaggle.com/code/mariapushkareva/medical-insurance-cost-with-linear-regression)
 
 ## Module 4
 ## Machine Learning 
