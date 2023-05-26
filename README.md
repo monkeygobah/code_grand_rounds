@@ -9,7 +9,9 @@
 ***If you are brand new to computer science, we reccomend you start at module 1 to get a brief overview of the topics!!***
 
 > Each module has slides which can be found in the main branch of this repository and can be used for reference as well as attached jupyter notebooks which can be played with on your own time to really start to get a grasp on the topics. we have left some references in each module, but if something is particularly confusing you can use ChatGPT or the internet to pursue it further.
-> 
+>
+> TABLE OF CONTENTS TO THE LEFT OF THE README.MD SYMBOL!
+>
 > ANKI CARDS AND Q-BANKS COMING SOON!:D
 
 
