@@ -1,5 +1,5 @@
 # Code MD
-# Computer Science By Medical Students for Medical Students
+## Computer Science By Medical Students for Medical Students
 
 > Medicine in the 21st century is becoming an increasingly computational field, and we have created this course to provide an introductory series for medical students (or really anyone!) looking to get familiar with the basics of computation and how it may be applied medically. The goal of these tutorials are **not** to make expert programmers, but rather introduce people to various areas of CS at a high level, and hopefully equip them with the basic skills to get started and implement some techniques in their own life/ research. 
 
@@ -12,7 +12,7 @@
 >
 > ANKI CARDS AND Q-BANKS COMING SOON!:D
 
-### Table of Contents
+## Table of Contents
 **[Module 1: Programming Basics](#module-1:-programming-basics)**<br>
 **[Module 2: Computer Vision](#module-2:-computer-vision)**<br>
 **[Module 3: Data Science](#module-3:-data-science)**<br>
@@ -21,7 +21,7 @@
 
 
 
-## Module 1: Programming Basics (~1.5 hrs)
+## Module 1: Programming Basics
 
 > Goal: Introduce Someone who has never touched written code to the bare basics
 
@@ -62,7 +62,7 @@
 ### Module 1 Projects:
   * Basic Python principle notebook review and post module worksheet
 
-## Module 2: Computer Vision (~1.5hrs)
+## Module 2: Computer Vision
 >  Goal: Explanation of basic computer vision principles and relevant principles. Introduction and explanation of artificial intelligence
 
 **2a) Review of Python Basics**
