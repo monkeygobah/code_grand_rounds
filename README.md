@@ -170,3 +170,6 @@ I (GRN) think this should be the bare basics of data science, as to get a full p
 * might be overkill, but also v relevant
 
 
+### Contributors
+George R. Nahass (UIC), Samuel Jiang (UIC), Mounika Bhaksara (UIC), Tim Pan (UIC)
+
