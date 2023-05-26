@@ -13,7 +13,8 @@ Medicine in the 21st century is turning into a computational field! Start here t
 
 ## Preface
 
-This curriculum is designed to ***augment***  medical (or other graduate training) by making high level topics in computer science approachable. By the end, we want you to be able to:
+This curriculum is designed to ***augment***  medical (or other graduate training) by making high level topics in computer science approachable. The modules are, by design, project based, as the best way to learn this stuff is to simply work through problems.
+By the end, we want you to be able to:
  * Talk about basic computer science toolkits with another computer scientist
  * Read a paper involving computatonal techniques and know roughly what is going on
  * Give you a framework with which to approach your own research/ clinical problems using computer science
