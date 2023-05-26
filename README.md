@@ -10,9 +10,15 @@
 
 > Each module has slides which can be found in the main branch of this repository and can be used for reference as well as attached jupyter notebooks which can be played with on your own time to really start to get a grasp on the topics. we have left some references in each module, but if something is particularly confusing you can use ChatGPT or the internet to pursue it further.
 >
-> TABLE OF CONTENTS TO THE LEFT OF THE README.MD SYMBOL!
->
 > ANKI CARDS AND Q-BANKS COMING SOON!:D
+
+### Table of Contents
+**[Module 1: Programming Basics](#module-1:-programming-basics)**<br>
+**[Module 2: Computer Vision](#module-2:-computer-vision)**<br>
+**[Module 3: Data Science](#module-3:-data-science)**<br>
+**[Module 4: Machine Learning (~2hrs)](#module-4:-machine-learning-(~2hrs)**<br>
+**[Module 5: Natural Language Processing](#module-5:-natural-language-processing)**<br>
+
 
 
 ## Module 1: Programming Basics (~1.5 hrs)
