@@ -14,7 +14,7 @@
 
 ## Module 1: Programming Basics (~1.5 hrs)
 
-### Goal: Introduce Someone who has never touched written code to the bare basics
+> Goal: Introduce Someone who has never touched written code to the bare basics
 
 **1a) Anaconda installation**
   * Introduction to IDEs
@@ -54,7 +54,7 @@
   * Basic Python principle notebook review and post module worksheet
 
 ## Module 2: Computer Vision (~1.5hrs)
-### Goal: Explanation of basic computer vision principles and relevant principles. Introduction and explanation of artificial intelligence
+>  Goal: Explanation of basic computer vision principles and relevant principles. Introduction and explanation of artificial intelligence
 
 **2a) Review of Python Basics**
   * Anaconda (virtual environments in general)
@@ -96,7 +96,7 @@
 *Coming soon...
 
 ## Module 4: Machine Learning (~2hrs)
-### Goals: Introduce learners to ML in broad strokes to allow people to be conversational and understand use cases of some core algorithms through very simple projects
+> Goals: Introduce learners to ML in broad strokes to allow people to be conversational and understand use cases of some core algorithms through very simple projects
 **4a)  Machine learning vs artificial intelligence**
   * How do we talk about these things
 **4b)  Types of machine learning**
@@ -117,7 +117,7 @@
   * K nearest neighbors 
   * Hierarchical clustering 
   * Elbow plots
-## Projects:
+### Module 4 Projects:
   * UCI heart disease dataset-KNN
   * Microarray malignancy dataset Warnat-Herresthal et al: Unsupervised Clustering
 
