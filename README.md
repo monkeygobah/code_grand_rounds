@@ -130,9 +130,10 @@ I (GRN) think this should be the bare basics of data science, as to get a full p
 ## Module 4 (~3 hrs)
 ## Machine Learning 
 > Goals: Introduce learners to ML in broad strokes to allow people to be conversational and understand use cases of some core algorithms through very simple projects
+
 **4a)  Machine learning vs artificial intelligence**
   * How do we talk about these things
-  *
+  
 **4b)  Types of machine learning**
   * Supervised learning
   * Unsupervised Learning
