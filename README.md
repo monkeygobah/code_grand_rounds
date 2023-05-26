@@ -13,7 +13,7 @@ Medicine in the 21st century is turning into a computational field! Start here t
 
 ## Preface
 
-This curriculum is designed to ***augment*** another medical (or other graduate training) by introducing high level topics in computer science. By the end, we want you to be able to:
+This curriculum is designed to ***augment***  medical (or other graduate training) by making high level topics in computer science approachable. By the end, we want you to be able to:
  * Talk about basic computer science toolkits with another computer scientist
  * Read a paper involving computatonal techniques and know roughly what is going on
  * Give you a framework with which to approach your own research/ clinical problems using computer science
@@ -24,11 +24,13 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
 
 * **If you are interested in data science/ machine learning, after completing module 1 do modules 3 and 4 in that order!**
 
+* **Use these notebooks as a starting point and then just start to play on your own!**
+
 > Each module has slides which can be found in the main branch of this repository and can be used for reference as well as attached jupyter notebooks which can be played with on your own time to really start to get a grasp on the topics. we have left some references in each module, but if something is particularly confusing you can use ChatGPT or the internet to pursue it further.
 >
 > ANKI CARDS AND Q-BANKS COMING SOON!:D
 
-**If you would like to contribute to the project, please get in touch.**
+**If you would like to contribute to the project and giving the lecture series at your university, please get in touch.**
 
 
 ## Module 1 (~2 hrs)
