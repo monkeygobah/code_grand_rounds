@@ -23,7 +23,7 @@ By the end, we want you to be able to:
 
 * **If you are brand new to computer science, we reccomend you start at module 1 to get a brief overview of the topics!**
 
-* **If you are interested in data science/ machine learning, after completing module 1 do modules 3 and 4 in that order!**
+* **If you are interested in data science/ machine learning, after completing module 1 do modules 3 and 4 *in that order*!**
 
 * **Use these notebooks as a starting point and then just start to play on your own!**
 
