@@ -31,7 +31,7 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
 **If you would like to contribute to the project, please get in touch.**
 
 
-## Module 1 
+## Module 1 (~2 hrs)
 ## Programming Basics
 
 > Goal: Introduce Someone who has never touched written code to the bare basics
@@ -73,7 +73,7 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
 ### Module 1 Projects:
   * Basic Python principle notebook review and post module worksheet
 
-## Module 2 
+## Module 2 (~2.5 hrs)
 ## Computer Vision
 >  Goal: Explanation of basic computer vision principles and relevant principles. Introduction and explanation of artificial intelligence
 
@@ -111,7 +111,7 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
   * Transverse CT cat count muscle/ pleural w spiro (**TIM LOOK HERE!**)
   * V/Q scan analysis
 
-## Module 3
+## Module 3 (~3 hrs)
 ## Data Science
 * Coming soon...
 
@@ -127,29 +127,34 @@ I (GRN) think this should be the bare basics of data science, as to get a full p
  ### Module 3 projects
  (https://www.kaggle.com/code/mariapushkareva/medical-insurance-cost-with-linear-regression)
 
-## Module 4
+## Module 4 (~3 hrs)
 ## Machine Learning 
 > Goals: Introduce learners to ML in broad strokes to allow people to be conversational and understand use cases of some core algorithms through very simple projects
 **4a)  Machine learning vs artificial intelligence**
   * How do we talk about these things
+  *
 **4b)  Types of machine learning**
   * Supervised learning
   * Unsupervised Learning
   * Semi-Supervised Learning
   * Reinforcement Learning
+  
 **4c) How does one start to do machine learning on their data**
   * Review of Data Science lecture
   * Cleaning data
   * Review of matrices 
   * Importance of mathematics but why you dont necesarily need to know it
+  
 **4d)  When should I not do machine learning?**
   * Understanding the rules of a system vs unknown systems/ large data
   * Bias and variance 
+  
 **4e) Introduction to core shallow algorithms**
   * Decision Trees
   * K nearest neighbors 
   * Hierarchical clustering 
   * Elbow plots
+  
 ### Module 4 Projects:
   * UCI heart disease dataset-K means https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/
   * Microarray malignancy dataset Warnat-Herresthal et al: Unsupervised Clustering  https://medium.com/leukemiaairesearch/clustering-techniques-with-gene-expression-data-4b35a04f87d5
