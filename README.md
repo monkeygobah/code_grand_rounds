@@ -1,15 +1,16 @@
-# Code MD
+# <img width="100" src="https://github.com/monkeygobah/code_md/assets/117255104/8dd263f4-d8d4-4661-b930-91981b03d70d"> Code MD      
 ## Computer Science By Medical Students for Medical Students
 
-## Table of Contents
+
+Medicine in the 21st century is turning into a computational field! Start here to learn the basics to begin to create or enhance your skillset! This curriculum is good for complete beginners or people with moderate levels of comptutational experience looking to explore new tools.
+
 **[Preface](#preface)**<br>
 **[Programming Basics](#programming-basics)**<br>
 **[Computer Vision](#computer-vision)**<br>
 **[Data Science](#data-science)**<br>
-**[Machine Learning (~2hrs)](#machine-learning-(~2hrs))**<br>
+**[Machine Learning](#machine-learning)**<br>
 **[Natural Language Processing](#natural-language-processing)**<br>
 
-## Module 0
 ## Preface
 
 This curriculum is designed to ***augment*** another medical (or other graduate training) by introducing high level topics in computer science. By the end, we want you to be able to:
@@ -19,13 +20,19 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
 
 ### How do I use this resource?
 
-***If you are brand new to computer science, we reccomend you start at module 1 to get a brief overview of the topics!!***
+* **If you are brand new to computer science, we reccomend you start at module 1 to get a brief overview of the topics!**
+
+* **If you are interested in data science/ machine learning, after completing module 1 do modules 3 and 4 in that order!**
 
 > Each module has slides which can be found in the main branch of this repository and can be used for reference as well as attached jupyter notebooks which can be played with on your own time to really start to get a grasp on the topics. we have left some references in each module, but if something is particularly confusing you can use ChatGPT or the internet to pursue it further.
 >
 > ANKI CARDS AND Q-BANKS COMING SOON!:D
 
 **If you would like to contribute to the project, please get in touch.**
+
+![download](https://github.com/monkeygobah/code_md/assets/117255104/b87a6ed1-4d04-4178-9f50-5c73d643df7d)
+
+
 
 ## Module 1 
 ## Programming Basics
@@ -107,12 +114,14 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
   * Transverse CT cat count muscle/ pleural w spiro (**TIM LOOK HERE!**)
   * V/Q scan analysis
 
-
-
 ## Module 3
 ## Data Science
 *Coming soon...
- * basically a whole session pandas and numpy
+**I (GRN) think this should be the bare basics of data science, as to get a full picture on data science you need two lectures to introduce the groundwork and then get into some real applied techniques. I am willing to bet this is something people want the most within the medical sphere, so having two well fleshed out sections makes sense in my brain.
+ * Pandas
+ * Scikitlearn
+ * numpy
+ * matplotlib
  * intro level stats
  * linear regression
  * logistic regression
@@ -143,8 +152,8 @@ This curriculum is designed to ***augment*** another medical (or other graduate 
   * Hierarchical clustering 
   * Elbow plots
 ### Module 4 Projects:
-  * UCI heart disease dataset-KNN
-  * Microarray malignancy dataset Warnat-Herresthal et al: Unsupervised Clustering
+  * UCI heart disease dataset-K means https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/
+  * Microarray malignancy dataset Warnat-Herresthal et al: Unsupervised Clustering  https://medium.com/leukemiaairesearch/clustering-techniques-with-gene-expression-data-4b35a04f87d5
 
 ## Module 5
 ## Natural Language Processing 
