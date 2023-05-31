@@ -172,5 +172,5 @@ I (GRN) think this should be the bare basics of data science, as to get a full p
 
 
 ### Contributors
-George R. Nahass (UIC), Samuel Jiang (UIC), Mounika Bhaksara (UIC), Tim Pan (UIC)
+George R. Nahass (UIC), Samuel Jiang (UIC), Mounika Bhaksara (UIC), Tim Pan (UIC), Simon Liu (UIC)
 
