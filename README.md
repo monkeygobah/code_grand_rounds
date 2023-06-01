@@ -39,6 +39,8 @@ By the end, we want you to be able to:
 
 > Goal: Introduce Someone who has never touched written code to the bare basics
 
+**[To top](#Computer-Science-By-Medical-Students-for-Medical-Students)**<br>
+
 **1a) Anaconda installation**
   * Introduction to IDEs
 
@@ -80,6 +82,8 @@ By the end, we want you to be able to:
 ## Computer Vision
 >  Goal: Explanation of basic computer vision principles and relevant principles. Introduction and explanation of artificial intelligence
 
+**[To top](#Computer-Science-By-Medical-Students-for-Medical-Students)**<br>
+
 **2a) Review of Python Basics**
   * Anaconda (virtual environments in general)
   * Logic operations
@@ -118,6 +122,8 @@ By the end, we want you to be able to:
 ## Data Science
 * Coming soon...
 
+**[To top](#Computer-Science-By-Medical-Students-for-Medical-Students)**<br>
+
 I (GRN) think this should be the bare basics of data science, as to get a full picture on data science you need two lectures to introduce the groundwork and then get into some real applied techniques. I am willing to bet this is something people want the most within the medical sphere, so having two well fleshed out sections makes sense in my brain.
  * Pandas
  * Scikitlearn
@@ -133,6 +139,8 @@ I (GRN) think this should be the bare basics of data science, as to get a full p
 ## Module 4 (~3 hrs)
 ## Machine Learning 
 > Goals: Introduce learners to ML in broad strokes to allow people to be conversational and understand use cases of some core algorithms through very simple projects
+
+**[To top](#Computer-Science-By-Medical-Students-for-Medical-Students)**<br>
 
 **4a)  Machine learning vs artificial intelligence**
   * How do we talk about these things
@@ -169,6 +177,8 @@ I (GRN) think this should be the bare basics of data science, as to get a full p
 * not sure we need this?
 * Was thinking maybe creation of vector db from some textbook and using gpt api to query
 * might be overkill, but also v relevant
+
+**[To top](#Computer-Science-By-Medical-Students-for-Medical-Students)**<br>
 
 
 ### Contributors
