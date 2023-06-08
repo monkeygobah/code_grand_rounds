@@ -69,7 +69,13 @@ By the end, we want you to be able to:
   * While loops
   * List comprehensions
   
-**1f) Advanced Operations**
+**1f) Objects
+  * What is an object?
+  * Initialization
+  * Attributes
+  * Methods
+  
+**1g) Advanced Operations**
   * Debugging
   * Importing libraries
   * Data manipulation
