@@ -1,0 +1,6 @@
+walking 4 500 4000
+walking.dat 16 100/mV 16 0 -27 199 0 ECG 1
+walking.dat 16 100/mV 16 0 -23 519 0 ECG 2
+walking.dat 16 100/mV 16 0 12 475 0 ECG 3
+walking.dat 16 100/mV 16 0 15 247 0 ECG 4
+# <age>: 25  <sex>: M  <diagnoses>: (none)  <medications>: (none)
