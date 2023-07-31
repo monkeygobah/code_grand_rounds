@@ -1,0 +1,5 @@
+BMI,Weight Status
+Below 18.5,Underweight
+18.5 - 25.0,Healthy Weight
+25.0 - 30.0,Overweight
+30.0 and Above,Obesity
