@@ -1,0 +1,265 @@
+---
+title: "Lesson4_R"
+output: html_document
+date: "2023-08-20"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Lesson 4: Modeling data (Part 1: Linear Regression)
+
+## Introduction:
+
+### What is modeling?
+
+Modeling is a fundamental concept in data analysis as it allows us to understand and explain relationships within the data. Specifically, it provides a way for us to quantify these relationships, make new predictions, and test hypotheses. As the programming language favored for statistical analysis, R is a powerful tool for modeling; it provides an extensive collection to packages that caters to various modeling needs.
+
+In the words of the great British statistician, George Box, "all models are wrong, but some are useful". It is important to understand this saying, because it encapsulates the key principle in modeling: the goal is not to create a perfect representation of reality but to create a practical tool that can help in understanding, prediction, and decision-making. Models are inherently flawed due to the various assumptions and approximations required to make them. However, even so, as long as the models captured the essence of the system, then the models may still be incredibly useful in specific contexts. It is of utmost important to consider whether a model is designed to achieve answer the specific questions at hand when selecting a model. Picking a model with assumptions that do not match the data can lead to false conclusions.
+
+## Linear regression
+
+Within the realm of models, there are two large categories: linear and nonlinear models. Linear and nonlinear models differ in their complexity and ability to capture different types of relationships. For this lesson, we will focus on linear models, specifically linear regression. Linear regression is used to model the relationship between a continuous response variable (i.e. dependent variable or variables that you are trying to understand; usually on the y-axis) and predictor variables (i.e. independent variables/variables you use to understand the response variable; usually on the x-axis) and by assuming a linear relationship between the predictor and response. This means that a change in the predictor variable results in a proportional change in the response. Mathematically, it is expressed as the following:
+
+$$
+Y = \beta_0 + \beta_1X_1 +\beta_2X_2 + ...+\beta_nX_n + \epsilon 
+$$
+
+Where:
+
+-   $Y$ is the response variable.
+
+-   $\beta_0, \beta_1, ..., \beta_n$ are the regression coefficients. These are the coefficients to be estimated via linear regression.
+
+    -   $\beta_0$ is the intercept.
+
+    -   $\beta_1, \beta_2, …, \beta_n$ are coefficients for the predictors.
+
+-   $X_1, X_2, …, X_n$ are the predictor variables.
+
+-   $\epsilon$ is the error term.
+
+For example, if you wanted to do an experiment to measure how plant growth is related to sun exposure, then the amount of sun exposure would be the predictor variables and the amount of plant growth would be the response variable.
+
+### Example:
+
+Let's analyze a toy dataset on the salary of employees and their years of experience.
+
+``` r
+install.packages("tidymodels")
+```
+
+```{r}
+# First, we should load the libraries that we will need: 
+library(tidyverse)
+library(tidymodels)
+
+# Loading data: 
+salary <- read.csv("Salary_dataset.csv")
+
+# Let's take a look at the data: 
+salary # has 30 rows and 3 columns
+
+# Let's drop the first column since it is just a count of the number of employees: 
+salary <- salary[, -1]
+
+# convert the data.frame into a tibble (Note: this is an example of tidy data!)
+salary_tib <- tibble(salary)
+salary_tib
+
+# what are the data types of each of the variables? 
+class(salary_tib$YearsExperience) #Years of experience: numerics 
+class(salary_tib$Salary) #salary: numerics 
+
+summary(salary_tib) #prints out some basic statistics about the dataset 
+
+```
+
+We can also calculate these statistics with individual functions:
+
+```{r}
+mean(salary_tib$Salary) # calculates mean 
+sd(salary_tib$Salary) # calcualtes standard deviation
+IQR(salary_tib$Salary) # calculates interquartile range
+range(salary_tib$Salary) # calculates range 
+max(salary_tib$Salary) # max
+min(salary_tib$Salary) # min
+```
+
+Before we start modeling the data, let's take a closer look into the dataset.
+
+```{r}
+ggplot(salary_tib, aes(x = YearsExperience)) +
+  geom_histogram(binwidth = 1)
+```
+
+```{r}
+ggplot(salary_tib, aes(x = Salary)) +
+  geom_histogram(binwidth = 9000)
+```
+
+```{r}
+ggplot(data = salary_tib, aes(x = YearsExperience, y = Salary)) +
+  geom_point() +
+  labs(
+    title = "Salary vs Years of Experience working",
+    x = "Years of Experience (years)",
+    y = "Salary ($)"
+  )
+```
+
+Looking at the data, we can see that there seems to be a linear relationship between the number of years of working experience and salary. This can be expressed as: $Salary_i = \beta_0 + \beta_1 * YearsExperience_i$. Our goal with linear regression is to estimate the values of $\beta_0$ and $\beta_1$. Luckily, there are already functions available that can help us do that (i.e. parsnip library contains most of the functionalities for modeling).
+
+Here are the three steps:
+
+1.  Declare the type of model: linear regression
+2.  Set the computational engine - the default is ordinary least square ('lm') but feel free to explore other options on the [tidymodel package website](https://www.tidymodels.org/)
+3.  Declare the formula: generally, the structure follows: response variable \~ predictor variable(s)
+
+```{r}
+lin_mod <- linear_reg() %>% # Step 1
+  set_engine("lm") %>% # Step 2 
+  fit(Salary ~ YearsExperience, data = salary_tib) # Step 3
+
+lin_mod
+
+```
+
+There are many other ways of performing linear regression. Here is another example:
+
+```{r}
+lm_fit <- lm(Salary ~ YearsExperience, data = salary_tib)
+summary(lm_fit) # lists summary of model 
+
+# although these functions are not in the tidymodel package, you may find that they are easier to use as they provide more information. For example, the summary function provides you a summary of essential information, like the coefficients AND the R^2 value, which tells you how good the fit of the line is. 
+```
+
+#### Interpretation
+
+From the model output, we can see that $\beta_0 = 24848$ and $\beta_1 = 9450$. Putting everything together: $\hat{Salary_i} = 24848 + 9450 * YearsExperience_i$. This means that on average, an one year increase in experience will lead to a \$9,450 increase in salary. Furthermore, a person with no years of experience will have a salary of \$24,848.
+
+#### Visualization
+
+We can plot the fitted line on top of our data using `ggplot2`.
+
+```{r}
+ggplot(salary_tib, aes(x = YearsExperience, y = Salary)) + 
+  geom_point() +
+  stat_smooth(method = "lm", col = "red", se = FALSE)
+```
+
+#### Prediction
+
+The advantage of modeling is that it not only allows you to understand the relationships in your data but also enables you to make predictions. Let's use our model to predict the salary for some new employees.
+
+```{r}
+# Prediction using tidymodel
+new_employees <- tibble(YearsExperience = c(1.2, 5.3, 8.8, 15, 20))
+
+predict(lin_mod, new_data = new_employees)
+```
+
+Again, we can also make predictions using the second linear regression method.
+
+```{r}
+predictions <- predict(lm_fit, newdata = new_employees)
+predictions
+```
+
+## Assumptions of Linear Regression
+
+As we mentioned earlier, every model is made with assumptions and simplications. What are the assumptions of linear regression?
+
+1.  **Linearity:** The relationship between predictors and response is linear.
+
+2.  **Independence:** Errors are independent and identically distributed (IID).
+
+3.  **Homoscedasticity:** The variability of errors is constant across all levels of predictors.
+
+4.  **Normality:** Errors are normally distributed.
+
+5.  **No Multicollinearity:** Predictor variables are not too highly correlated with each other.
+
+### Testing for assumptions
+
+How do we check that these assumptions are satisfied by our data? First step is to check the residuals.
+
+-   Residuals are the difference between the predicted and observed values of data.
+-   For linear models, we want the residuals to be randomly distributed around 0.
+-   We do NOT want to see patterns in the residuals along the x or y axis. (The image below illustrates examples of residual plots. If the data is linear, then we should see a random pattern as illustrated in the left-most panel. The two panels on the right shows examples of residual plots of data that are not linear.)
+
+![](images/residuals1.png)
+
+Source for [image](https://www.thedataschool.co.uk/elnisa-marques/residual-plots-tableau-important/).
+
+In our example using tidymodel:
+
+```{r}
+salary_tib %>%
+  mutate(predict(lin_mod, new_data = tibble(YearsExperience))) %>% # adding predicted values
+  mutate(residual = Salary - .pred) # calculated residuals 
+
+```
+
+An easier way to do this would be to use: `augment().`
+
+```{r}
+lin_mod_aug <- augment(lin_mod$fit)
+lin_mod_aug
+```
+
+```{r}
+ggplot(lin_mod_aug, mapping = aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.5) +
+  geom_hline(yintercept = 0, color = "gray", lty = "dashed") +
+  labs(x = "Predicted salary", y = "Residuals")
+```
+
+As you can see, the residuals are randomly scattered around 0, and there is no pattern.
+
+Again, here is another way to look at the residuals if you do not want to use tidymodels:
+
+```{r}
+residual_lm_fit <- residuals(lm_fit)
+```
+
+```{r}
+ggplot(salary_tib, aes(x = fitted(lm_fit), y = residuals(lm_fit))) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  labs(x = "Predicted salary", y = "Residuals", title = "Residual Plot")
+
+```
+
+To assess the normality assumption, we can generate a QQ plot of the residuals. If the residuals are normally distributed (which satisfies the assumption), then the dots should closely follow the straight line $y = x$.
+
+```{r}
+qqnorm(residual_lm_fit) # generating QQ Plot
+qqline(residual_lm_fit, col = "red") # adds the line y = x onto the plot
+```
+
+To do a more comprehensive test, we can use the gvlma package to test for the validity of our assumptions.
+
+``` r
+install.packages("gvlma")
+```
+
+```{r}
+library("gvlma")
+check_model_assumptions <- gvlma(lm_fit)
+check_model_assumptions
+```
+
+The output tells you:
+
+1.  Global stats: is the relationship linear? In this case, yes.
+2.  Skewness & Kurtosis: is the distribution of the residuals normal? Yes.
+3.  Link function: Is the dependent variable continuous or categorical? (Remember that linear regression requires a continuous dependent variable)
+4.  Heteroskedasticity: Is the error variance equally random (i.e. is the homoskedasticity assumption met)? Yes!
+
+We can also plot these results to visualize:
+
+```{r}
+plot.gvlma(check_model_assumptions)
+```

@@ -1,0 +1,308 @@
+---
+title: "Lesson2_R"
+output: html_document
+date: "2023-08-18"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Lesson 2: Data wrangling basics
+
+## Part 1: Installing and Loading Libraries
+
+### Installing Libraries
+
+R libraries are essential for extending its capabilities. You can install them using `install.packages()`.
+
+``` r
+# Install a package
+install.packages("package_name")
+```
+
+### Loading Libraries
+
+After installation, load the package into your R session using `library()`.
+
+``` r
+# Load a package
+library(package_name)
+```
+
+## Part 2: Working Directory, Data Import, and Data Export
+
+### Working Directory
+
+You can check the current working directory using the `getwd()` function.
+
+``` r
+# Check current working directory
+current_dir <- getwd()
+print(current_dir)
+```
+
+You can set the working directory to a specific path using the `setwd()` function.
+
+``` r
+# Set working directory
+new_dir <- "path/to/your/directory"
+setwd(new_dir)
+```
+
+While the **`setwd()`** function changes the working directory for the current R session, you might want to change it temporarily for specific tasks.
+
+``` r
+# Change working directory temporarily
+old_dir <- getwd()  # Store current directory
+new_dir <- "path/to/your/other/directory"
+setwd(new_dir) # Set to new directory
+setwd(old_dir)  # Revert to the original directory
+```
+
+### Importing Data
+
+Use functions like `read.csv()` to import data from files like CSVs. Note, use the complete file path if the file is not within the current working directory.
+
+``` r
+# Import CSV data
+data <- read.csv("data.csv")
+```
+
+### Exporting Data
+
+For exporting, use functions like `write.csv()`.
+
+``` r
+# Export data to CSV
+write.csv(data, "exported_data.csv", row.names = FALSE)
+```
+
+## Part 3: Writing and Calling Functions
+
+### Writing functions
+
+You can create custom functions to automate common tasks in your code. The general format of a function is:
+
+``` r
+name <- function(argument1, argument2, argument3){
+
+  body of the function (i.e. where you code what the function does)
+
+  return(output)
+}
+```
+
+A function takes in arguments (the example lists 3 but your function can have more or less), performs operations on the arguments, and returns an output. Here is an example of a function that computes the mean of a vector.
+
+```{r}
+# name of function: calculate_mean
+# argument: data (a vector)
+# action: compute mean 
+# output: mean of input vector
+
+calculate_mean <- function(data) {
+  mean_value <- sum(data) / length(data)
+  return(mean_value)
+}
+```
+
+### Calling your custom functions
+
+After defining a function, you can call it with arguments.
+
+```{r}
+# Calling the function
+data <- c(1, 2, 3, 4, 5)
+result <- calculate_mean(data)
+result
+```
+
+### Calling functions from packages
+
+In some cases, the actions that you want to perform on your data may already exist within a package. In these instances, you can load those packages and then call the functions within your code. For example, instead of writing a function to calculate the mean, we can just call the `mean()` function from the `stats` package (loaded by default).
+
+```{r}
+# Using statistical functions
+mean_value <- mean(data)
+mean_value
+```
+
+## Part 3: Iterations (For Loops, If/Else Statements)
+
+### For Loops
+
+For loops allow iteration of a set of actions over a sequence of values.
+
+```{r}
+# For loop example
+for (i in 1:5) { 
+  print(i)
+}
+```
+
+### If/Else Statements
+
+Conditional statements help execute code based on conditions.
+
+```{r}
+# If/else example
+x <- 10
+if (x > 5) {
+  print("x is greater than 5")
+} else {
+  print("x is not greater than 5")
+}
+```
+
+## Part 5: Data Wrangling: Tidyverse
+
+As mentioned previously, R is a powerful programming language that is capable of handling large datasets. When dealing with large datasets, however, it is important to stay organized and consistent. One standardized way of cleaning and organizing data in R that maps the meaning of a dataset into its structure is called **tidy data**. A whole ecosystem of R packages has been built around the tidy data principle, including `tidyverse`, `dplyr`, `tidyr` , etc.
+
+The three main principles of tidy data are:
+
+1.  Every column is a variable (i.e. an attribute or measurement).
+2.  Every row is an observation (i.e. one sample).
+3.  Every cell is a single value.
+
+To illustrate the principle of tidy data, please see the image below that shows two ways of visualizing the same data: wide vs long. A wide format contains values that do not repeat in the first column; a long format contains values that do repeat in the first column. Generally, the wide format is used to visualize and present data, because it is easier for our brain to interpret. However, the wide format is not considered to be **tidy data**, because each row is NOT an observation (instead each row contains the values associated with 3 observations in this example). The long format, on the other hand, is considered to be tidy data. Notice it satisfies the three main principles of tidy data. In R, it is good practice to follow the tidy data principle as it provides a systematic format for the computer to extract data and perform operations.
+
+![](images/original-dfs-tidy.png)
+
+[source for [image](https://bookdown.org/martin_monkman/DataAnalyticsCodingFundamentals/tidy-data.html#:~:text=The%20%E2%80%9Cwide%E2%80%9D%20form%20doesn',in%20both%20rows%20and%20columns.)]
+
+Due to the popularity of this way of formatting data for data science, a collection of R packages has been created that contains the core packages required for analysis. This collection is called `tidyverse`. For the rest of the lesson, we will need to install and load this library.
+
+```         
+install.packages("tidyverse")
+```
+
+```{r}
+library(tidyverse)
+```
+
+### Tibbles
+
+Tibbles are a special type of data frame that is part of the `tidyverse` and as the name suggest, subscribes to the tidy data philosophy. One of the main differences between a tibble and a data frame is how R prints out the data. Data frames tend to print out all the rows and columns, which may be difficult to read for larger datasets; tibbles print a limited number of rows and columns by default, which makes it easier to view and understand the data. In addition, specific packages, like dplyr, has been developed to manipulate tibbles for data analysis. In general, for large datasets, it is better to use tibble.
+
+``` r
+# Note, we do not need to install the tibble library since tidyverse already contains tibble, but in the future, if you want to only call the tibble package, here is the code. 
+
+# Install tibble package
+install.packages("tibble")
+
+# Load tibble package
+library(tibble)
+```
+
+```{r}
+# Create a tibble (This tibble is an example of tidy data)
+gym_stats <- tibble(name = c("Alice", "Bob", "Charlie", "John", "Sarah", "Lily", "Ted"), age = c(25, 30, 90, 56, 33, 40, 16), mile_time = c(5.2, 9.8, 6.5, 12.1, 6, 7.7, 8.3))
+gym_stats
+```
+
+Let's look at an example of a dataset that is not tidy and how we can convert it into tidy data.
+
+```{r}
+# create a tibble in wide format (this is the mile time of gym members over the course of 3 months)
+# contains the gym member names, age, gym membership status (silver < gold < platinum), mile times in june, july, and august
+
+mile_time_wide <- tibble(name = c("Alice", "Bob", "Charlie", "John", "Sarah", "Lily", "Ted"), age = c(25, 30, 90, 56, 33, 41, 16), status = c("gold", "silver", "gold", "platinum", "silver", "gold", "platinum"), june = c(5.2, 9.8, 6.5, 12.1, 6, 7.7, 8.3), july = c(5.1, 9.4, 6.9, 11, 5.5, 7.3, 8.9), august = c(5.3, 9.1, 6.4, 11.2, 5.4, 7.6, 8.7))
+mile_time_wide
+
+```
+
+Notice that the above data is in the wide format. Each row does not correspond with an observation; instead it is 3 observations - 3 separate mile times for each gym member. To convert the data frame from wide to long format, we only need to use one command: `pivot_longer()`. The arguments for this function are:
+
+1.  data - the data frame you want to pivot to the long format
+2.  cols - the columns you wish to pivot (i.e. june, july, august)
+3.  names_to - the name of the new column where the column names of the pivoted variables go (i.e. month)
+4.  values_to - the name of the new column where the data in pivoted variables go (i.e. mile_time)
+
+```{r}
+mile_time_long <- pivot_longer(data = mile_time_wide,
+                               cols = c(june, july, august), 
+                               names_to = "month", 
+                               values_to = "mile_time")
+mile_time_long
+```
+
+Convince yourself that the above data frame is in the long format!
+
+### dplyr: a grammar for data manipulation
+
+The `dplyr` package facilitates data manipulation with the tidy data philosophy. It can be thought of as the "grammar" of the tidyverse syntax, because it provides a set of actions or verbs that allow you to manipulate your data. The common "verbs" are:
+
+-   `arrange()`: change the order of rows
+-   `distinct()`: find the unique rows
+-   `filter()`: find rows that match the selection criteria
+-   `mutate()`: add new variables
+-   `select()`: select particular columns by name
+-   `slice()`: select particular rows with their indices
+-   `summarise()`: reduce values into a single value/summary
+
+For the complete list, please see the [dplyr package](https://dplyr.tidyverse.org/) information.
+
+While the number of functions/"verbs" might seem overwhelming, dplyr streamlines the usage of these verbs. In general,
+
+1.  The first argument is always the data frame that you want to analyze.
+2.  The subsequent arguments dictate what you want to do with that data frame (i.e. which columns you want to manipulate).
+3.  The output is always a new data frame.
+
+Let's start with a small example:
+
+``` r
+# Install dplyr package (again, don't need to run this block since we already loaded tidyverse)
+install.packages("dplyr")
+
+# Load dplyr package
+library(dplyr)
+```
+
+```{r}
+# Filter rows: filter mile times based on age
+filtered_mile_time <- filter(mile_time_long, age < 40)
+filtered_mile_time
+
+# Select columns: select only age column 
+gym_member_age <- select(mile_time_long, name, age)
+gym_member_age
+
+# Group by and summarize: calculate the average mile time across 3 months / gym member
+summary_data <- mile_time_long %>%
+  group_by(name) %>%
+  summarize(mean_value = mean(mile_time))
+summary_data
+```
+
+### Pipes (`%>%`)
+
+So far, we have only seen examples of doing one action on a dataframe. However, in many cases, your analysis may require multiple actions. Rather than doing the actions sequentially (which may take up a lot of memory), an easier way is to use pipes, which is a technique for passing data from one action to another. Pipes help chain operations for more readable code using the `magrittr` package. Again, this package is loaded with `tidyverse`, so we will not need to install it (code is provided in case you have to install it separately).
+
+``` r
+# Install magrittr package
+install.packages("magrittr")
+
+# Load magrittr package
+library(magrittr)
+```
+
+So how do you use pipes? Let's say that we wanted to find the average mile time of the gym members across the three months who have the gold gym membership and are older than 40. To do this, we would have to do 3 separate actions that are nested:
+
+```{r}
+mean( mile_time_long$mile_time[mile_time_long$status == "gold" & mile_time_long$age > 40] ) 
+```
+
+This is messy and difficult to read! Using pipes, we can express this sequence of actions is a more understandable manner.
+
+```{r}
+# Using pipes
+
+mile_time_long %>%
+  filter(status == "gold") %>%
+  filter(age > 40) %>%
+  summarize(mean_value = mean(mile_time))
+
+```
+
+## 

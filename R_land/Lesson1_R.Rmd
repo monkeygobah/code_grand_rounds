@@ -1,0 +1,302 @@
+---
+title: "Lesson 1: R Basics"
+output: html_document
+date: "2023-08-18"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+R is a powerful programming language and environment. It is one of the most widely use tool around the world for statistical modeling, data analysis, and visualization. With an extensive library of packages, R is one of the most adaptable and effective programming languages for statistical computing and graphics.
+
+This lesson is dedicated to teaching you the basics of R programming. In particular, it will teach you the different data types in R, creating objects, and various data structures.
+
+## Downloading R & RStudio
+
+Download R from the [R Project](https://cran.r-project.org/) website by selecting the proper distribution. Follow installation instructions.
+
+Download RStudio [here](https://posit.co/download/rstudio-desktop/) by selecting the proper distribution. Follow installation instructions.
+
+# R Coding Basics
+
+One of the many advantages of using R is that you can easily use it as a calculator.
+
+```{r}
+3 * 89
+```
+
+```{r}
+(590-76+3) / 23
+```
+
+```{r}
+sin(3*pi/2)
+```
+
+To store values in the R environment, you can create new objects and assign values to them with the assignment operator `<-`.
+
+```{r}
+val <- 3 * 89
+```
+
+To view the value of the object, simply type the name of the object in the console:
+
+```{r}
+val
+```
+
+Notice that the assignment operator in R is `<-` instead of `=`. The operator `<-` assigns the value (on the right of the operator) to the object name (on the left of the operator). In most cases, using `<-` and `=` are equivalent but not always. Thus, for good practice, it is always better to use `<-` when creating objects.
+
+## Naming Convention
+
+Similar to other programming languages, there are naming conventions. The general rules of thumb are:
+
+1.  Use meaningful names for variables
+
+2.  Avoid spaces or special characters
+
+3.  R is case sensitive, so maintaining a consistent naming scheme is essential to avoiding unnecessary errors.
+
+4.  Object names cannot start with a number. For example, `2apples` cannot be used as an object name, but `apples2` is a valid name.
+
+5.  Avoid reserved words in R. These are words that have a specific meaning in R and cannot be used as object names. For example, `if`, `mean`, and `df` are all examples of reserved words. See this [list](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html) for the set of reserved words in R.
+
+The most common naming convention in R is snake_case, where all the words are lowercase and words are separated by underscores.
+
+```{r}
+first_name <- "Adam"
+last_name <- "Smith"
+```
+
+# Data Types
+
+In R, data types define the nature of the values you work with. Understanding data types is crucial for effective programming, data manipulation, and analysis.
+
+1.  Numeric data type: these are all real numbers, including integers and decimals.
+
+```{r}
+temperature <- 37
+x <- 9.812
+```
+
+2.  Integer data type: these are whole numbers.
+
+```{r}
+num <- 8L # use 'L' to indicate an integer vs numeric 
+```
+
+3.  Character data type: these are texts or strings.
+
+```{r}
+name <- "John Doe"
+```
+
+4.  Logical data type: these are Boolean values. The two values possible are: `TRUE` or `FALSE`.
+
+```{r}
+has_cat <- FALSE
+is_student <- TRUE
+```
+
+## Data type conversion
+
+Once you are comfortable with the different data types in R, it is important to understand how to convert between the different data types.
+
+1.  Converting to character: `as.character()`
+2.  Converting to numeric: `as.numeric()`
+3.  Converting to integer: `as.integer()`
+4.  Converting to logical: `as.logical()`. Note when converting numeric values to logical, non-zero values become `TRUE` and zero becomes `FALSE.`
+
+If you are ever uncertain regarding the data type of a variable, use `class()` to check:
+
+```{r}
+class(name)
+```
+
+If you want to make sure that a object of a specific type, use `is.*`. This will return a boolean: `TRUE` or `FALSE`.
+
+```{r}
+is.logical(has_cat)
+
+# you can also store it in another object
+is_numeric <- is.numeric(x)
+is_numeric
+
+```
+
+# Data structure
+
+Data structures are fundamental concepts in programming that allow you to organize and store data efficiently. In R, there are several key data structures you'll encounter frequently.
+
+1.  Vectors: the simplest data structure in R. However, it can only hold elements of the [**same**]{.underline} data type.
+
+```{r}
+# Creating a vector
+numeric_vector <- c(1, 2, 3, 4, 5)
+character_vector <- c("apple", "banana", "pear", "blueberry", "watermelon")
+logical_vector <- c(TRUE, FALSE, TRUE)
+```
+
+2.  Lists: a versatile data structure that can hold elements of different data types, including other lists. If you require additional organization in your data, it is also possible to create lists with named elements (or a dictionary).
+
+```{r}
+# Creating a list
+my_list <- list(name = "John", age = 30, grades = c(85, 90, 78))
+nested_list <- list(inner_list = list(item1 = 10, item2 = "more lists"))
+```
+
+3.  Matrices: a two-dimensional data structure with rows and columns.
+
+```{r}
+# Creating a matrix
+my_matrix <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3)
+```
+
+4.  Data frames: a tabular data structure with rows and named columns, similar to a spreadsheet.
+
+```{r}
+# Creating a data frame
+my_data <- data.frame(name = c("Alice", "Bob", "Charlie"),
+                      age = c(25, 30, 28),
+                      score = c(85, 90, 78))
+```
+
+## Manipulating data structures
+
+### Indexing
+
+You can access and modify elements within data structures using indexing.
+
+```{r}
+# Accessing elements
+numeric_vector
+element <- numeric_vector[2]  # Access the second element
+element
+
+# Modifying elements
+numeric_vector[3] <- 99  # Change the third element
+numeric_vector # vector after we change it 
+```
+
+### Subsetting
+
+Similar to indexing, subsetting involves selecting specific elements from a data structure using indices.
+
+```{r}
+# Subsetting vectors
+numeric_vector_subset <- numeric_vector[2:4]
+numeric_vector_subset
+
+# Subsetting matrices
+element_2_2 <- my_matrix[2, 2]
+element_2_2
+
+# Subsetting data frames
+charlies_age <- my_data[3, "age"]
+charlies_age
+```
+
+### Filtering and conditional selection
+
+This allows you to extract specific elements based on conditions. To find entries that are greater than a certain value, use `>`. Similarly, to find entries that are less than a certain value, use `<`. Use `>=` for 'greater than or equal to', and use `<=` for 'less than or equal to'. To find entries that are 'equal to', use `==`.
+
+```{r}
+# Filtering vectors
+numbers <- c(1:10) # creating a vector from 1 to 10
+numbers 
+even_numbers <- numbers[numbers %% 2 == 0]
+even_numbers
+
+# Filtering data frames
+students <- my_data[my_data$age < 30, ]
+students
+```
+
+The above demonstrates very simple conditions. In many cases, you might have to do more complex filtering. To do this, you could use the 'or' operator (`|`) to test for equality to multiple values or the 'and' operator (`&`) to test for the intersection of multiple conditions.
+
+```{r}
+# return both apple and watermelon
+character_vector[character_vector == "apple" | character_vector == "watermelon"]
+
+# return values greater than 2 and less than 6
+numbers <- c(1:10)
+numbers[numbers > 2 & numbers <6]
+```
+
+### Adding and removing elements
+
+```{r}
+# Adding elements
+numbers <- c(1:10)
+numbers <- c(numbers, 60)  # Add 60 to the vector
+numbers
+
+# Removing elements
+numbers <- numbers[-10]  # Remove the tenth element
+numbers
+```
+
+### Reordering and sorting
+
+```{r}
+# Reordering vectors based on the indices 
+numbers <- c(1:5)
+reordered_numbers <- numbers[c(5, 2, 4, 1, 3)]
+reordered_numbers
+
+# Sorting vectors
+sorted_numbers <- sort(reordered_numbers)
+sorted_numbers
+```
+
+### Vector arithmetic
+
+Once you have created your vectors, you can perform basic arithmetic operations on the vectors just like you would with individual numbers. In these cases, unless otherwise specified, the operations are conducted on an element-wise basis if the vectors are the same length.
+
+```{r}
+
+# Creating vectors
+v1 <- c(1, 4, 9)
+v2 <- c(1, 2, 3)
+
+# Check the length of vectors
+length(v1)
+length(v2)
+
+# Addition
+sum_vector <- v1 + v2
+sum_vector
+
+# Subtraction
+diff_vector <- v2 - v1
+diff_vector
+
+# Multiplication
+prod_vector <- v1 * v2
+prod_vector
+
+# Division
+quot_vector <- v2 / v1
+quot_vector
+```
+
+Many functions in R are vectorized, meaning they operate element-wise on vectors.
+
+```{r}
+# Vectorized functions
+sqrt_vector <- sqrt(v1)  # Calculate square root of each element
+sqrt_vector
+exp_vector <- exp(v2)  # Calculate exponentiation for each element
+exp_vector
+```
+
+R performs broadcasting when you operate on a vector and a single value. The single value is recycled to match the length of the vector.
+
+```{r}
+# Broadcasting
+scalar_add <- v1 + 10  # Adds 10 to each element of v1
+scalar_add
+```
