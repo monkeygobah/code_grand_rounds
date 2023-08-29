@@ -1,4 +1,4 @@
-# <img width="100" src="https://github.com/monkeygobah/code_md/assets/117255104/8dd263f4-d8d4-4661-b930-91981b03d70d"> Code MD      
+# Code Grand Rounds
 ## Computer Science By Medical Students for Medical Students
 
 
